@@ -3,5 +3,5 @@
 
     session_destroy();
 
-    header('location: form-login.php?status=sukses');
+    header('location: ../index.php');
 ?>

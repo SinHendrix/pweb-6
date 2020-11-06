@@ -1,5 +1,12 @@
 <?php
     include('../config.php');
+    session_start();
+    if(!isset($_SESSION['username'])){
+        header('location: form-login.php');
+    }
+    else{
+        $username = $_SESSION['username'];
+    }
 
     $id = $_GET['id'];
     // echo $id;

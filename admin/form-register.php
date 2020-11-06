@@ -1,3 +1,14 @@
+<?php
+    include('../config.php');
+    session_start();
+    if(!isset($_SESSION['username'])){
+        header('location: form-login.php');
+    }
+    else{
+        $username = $_SESSION['username'];
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
