@@ -4,7 +4,7 @@
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $sql = "insert into admin (username, password) values('$username', '$password')";
+    $sql = "insert into admin (username, password) values('$username', MD5('$password'))";
     $query = mysqli_query($db_connection, $sql);
 
     if ($query) {
