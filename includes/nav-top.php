@@ -27,6 +27,9 @@
           <li class="nav-item">
             <a href="admin/index.php" class="nav-link">Admin</a>
           </li>
+          <li class="nav-item">
+            <a href="validation.php" class="nav-link">Validation</a>
+          </li>
         </ul>
       </div>
 
