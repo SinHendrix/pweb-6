@@ -100,6 +100,7 @@ echo $comment;
 echo "<br>";
 echo $gender;
 ?>
+<br>
 <a href="index.php">Home</a>
 </body>
 </html>
