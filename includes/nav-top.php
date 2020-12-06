@@ -30,6 +30,9 @@
           <li class="nav-item">
             <a href="validation.php" class="nav-link">Validation</a>
           </li>
+          <li class="nav-item">
+            <a href="chart.php" class="nav-link">Chart</a>
+          </li>
         </ul>
       </div>
 

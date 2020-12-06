@@ -1,0 +1,76 @@
+<?php
+include('config.php');
+// session_start();
+// session_destroy();
+    // echo ("test");
+    $date = date("Y-m-d");
+    $userIP = $_SERVER['REMOTE_ADDR'];
+    $query = "SELECT * FROM unique_visitors WHERE date = $date";
+    $result = mysqli_query($db_connection, $query);
+
+
+
+    $updateQuery = "UPDATE unique_visitors SET views = views + 1
+    WHERE id='1'";
+
+    $hasil = mysqli_query($db_connection, $updateQuery);
+    // echo($hasil);
+?>
+
+<?php include('includes/head-top.php') ?>
+    <title>SMA Tadikamesra</title>
+    <link rel="icon" href="theme/dist/img/osis.png">
+<?php include('includes/head-bot.php') ?>
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+window.onload = function () {
+
+var dps = []; // dataPoints
+var chart = new CanvasJS.Chart("chartContainer", {
+	title :{
+		text: "Dynamic Data"
+	},
+	data: [{
+		type: "line",
+		dataPoints: dps
+	}]
+});
+
+var xVal = 0;
+var yVal = 100; 
+var updateInterval = 1000;
+var dataLength = 20; // number of dataPoints visible at any point
+
+var updateChart = function (count) {
+
+	count = count || 1;
+
+	for (var j = 0; j < count; j++) {
+		yVal = yVal +  Math.round(5 + Math.random() *(-5-5));
+		dps.push({
+			x: xVal,
+			y: yVal
+		});
+		xVal++;
+	}
+
+	if (dps.length > dataLength) {
+		dps.shift();
+	}
+
+	chart.render();
+};
+
+updateChart(dataLength);
+setInterval(function(){updateChart()}, updateInterval);
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; width:100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>
